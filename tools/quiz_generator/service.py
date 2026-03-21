@@ -8,7 +8,7 @@ from fastapi import HTTPException
 from core.llm import get_llm_client
 from tools.quiz_generator.models import QuizQuestion, QuizRequest, QuizResponse
 
-_VALID_ESCAPES = set('"\\\/bfnrt')
+_VALID_ESCAPES = set('"\\' + "/bfnrt")
 
 
 def _sanitize(content: str) -> str:
